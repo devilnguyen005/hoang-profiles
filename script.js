@@ -1,0 +1,5 @@
+const menu=document.getElementById('menu');const links=document.getElementById('links');menu.addEventListener('click',()=>links.classList.toggle('open'));links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('copy').addEventListener('click',async()=>{const e='huyhoangnguyenpham62@gmail.com';try{await navigator.clipboard.writeText(e);document.getElementById('copy').textContent='Đã copy email ✓';setTimeout(()=>document.getElementById('copy').textContent='Copy email',1600)}catch{document.getElementById('copy').textContent=e}});
+
+function openTopology(){document.getElementById('topologyModal')?.classList.add('show');document.body.style.overflow='hidden';}
+function closeTopology(e){if(e.target.id==='topologyModal'||e.target.classList.contains('modal-close')){document.getElementById('topologyModal')?.classList.remove('show');document.body.style.overflow='';}}
+document.addEventListener('keydown', e=>{if(e.key==='Escape'){document.getElementById('topologyModal')?.classList.remove('show');document.body.style.overflow='';}});
